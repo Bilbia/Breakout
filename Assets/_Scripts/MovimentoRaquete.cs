@@ -12,7 +12,7 @@ public class MovimentoRaquete : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameManager.GetInstance();
     }
 
     // Update is called once per frame
@@ -21,5 +21,10 @@ public class MovimentoRaquete : MonoBehaviour
         if(gm.gameState != GameManager.GameState.GAME) return;
         float inputX = Input.GetAxis("Horizontal");
         transform.position += new Vector3(inputX, 0, 0)*Time.deltaTime*velocidade;
+
+        if(Input.GetKeyDown(KeyCode.Escape) && gm.gameState == GameManager.GameState.GAME) 
+        {
+            gm.ChangeState(GameManager.GameState.PAUSE);
+        }
     }
-}
+}   

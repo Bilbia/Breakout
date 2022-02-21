@@ -11,14 +11,8 @@ public class BlocoSpawner : MonoBehaviour
     {
         gm = GameManager.GetInstance();
 
-        for(int i=0;i < 12; i++)
-        {
-            for(int j=0;j<4;j++)
-            {
-                Vector3 posicao = new Vector3(-9 + 1.55f*i, 4 - 0.55f * j);
-                Instantiate(Bloco, posicao, Quaternion.identity, transform);
-            }
-        }
+        GameManager.changeStateDelegate += Construir;
+        Construir();
     }
 
     void Construir()
