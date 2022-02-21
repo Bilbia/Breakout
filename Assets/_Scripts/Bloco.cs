@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Bloco : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private int health;
+
     void Start()
     {
-        
+        health = Random.Range(0, 3);
     }
 
     // Update is called once per frame
@@ -18,6 +19,10 @@ public class Bloco : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
+        
+        health -= 1;
     }
 }
