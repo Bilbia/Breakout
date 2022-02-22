@@ -127,3 +127,5 @@ MonoBehaviour:
   health2: {fileID: 21300000, guid: fefd2dde6da73af48bfa9665fa4a7e7a, type: 3}
   health3: {fileID: 21300000, guid: 30f1aafbba281db48baf7f3adfce263b, type: 3}
   health4: {fileID: 21300000, guid: d33ecbe2b0a36244889d3571f8661488, type: 3}
+  audioSource: {fileID: 0}
+  destroySoundClip: {fileID: 8300000, guid: c81898ee77714434eb114e2a10c91227, type: 3}

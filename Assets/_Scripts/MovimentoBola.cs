@@ -11,6 +11,10 @@ public class MovimentoBola : MonoBehaviour
 
     private bool launchBall = false;
 
+    public AudioSource audioSource; 
+    public AudioClip collisionSoundClip;
+    public AudioClip launchSoundClip;
+
     GameManager gm;
 
     // Start is called before the first frame update
@@ -65,6 +69,7 @@ public class MovimentoBola : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        audioSource.PlayOneShot(collisionSoundClip);
         if(col.gameObject.CompareTag("Player"))
         {
             float dirX = Random.Range(-5.0f, 5.0f);
@@ -88,6 +93,7 @@ public class MovimentoBola : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Space)){
             launchBall = true;
+            audioSource.PlayOneShot(launchSoundClip);
 
             float dirX = Random.Range(-5.0f, 5.0f);
             float dirY = Random.Range(2.0f, 5.0f);

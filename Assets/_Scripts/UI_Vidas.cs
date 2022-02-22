@@ -13,6 +13,6 @@ public class UI_Vidas : MonoBehaviour
    
    void Update()
    {
-       textComp.text = $"Vidas: {gm.vidas}";
+       textComp.text = $"Lives: {gm.vidas}";
    }
 }

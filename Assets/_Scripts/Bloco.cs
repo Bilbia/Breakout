@@ -12,6 +12,10 @@ public class Bloco : MonoBehaviour
     public Sprite health3;
     public Sprite health4;
 
+    public AudioSource audioSource; 
+    public AudioClip destroySoundClip;
+
+
 
 
     void Start()
@@ -38,6 +42,7 @@ public class Bloco : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (health <= 0) {
+            AudioSource.PlayClipAtPoint(destroySoundClip, transform.position, 5);
             Destroy(gameObject);
         }
         
