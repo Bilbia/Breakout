@@ -38,10 +38,7 @@ public class BlocoSpawner : MonoBehaviour
     {
         if(transform.childCount <= 0 && gm.gameState == GameManager.GameState.GAME)
         {
-            if(gm.pontos > gm.highscore)
-            {
-                gm.highscore = gm.pontos;
-            }
+            gm.SaveHighscore();
             gm.ChangeState(GameManager.GameState.ENDGAME);
         }
     }

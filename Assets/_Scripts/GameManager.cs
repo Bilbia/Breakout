@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManager
 {
@@ -9,7 +10,7 @@ public class GameManager
     public GameState gameState {get; private set;}
     public int vidas;
     public int pontos;
-    public int highscore = 0;
+    public int highscore;
     public bool newGame = false;
 
     private static GameManager _instance;
@@ -29,6 +30,7 @@ public class GameManager
         vidas = 3;
         pontos = 0;
         gameState = GameState.MENU;
+        highscore = LoadHighscore();
     }
 
     public delegate void ChangeStateDelegate();
@@ -43,10 +45,24 @@ public class GameManager
 
     public void Reset()
     {
-        if(pontos > highscore) highscore = pontos;
+        SaveHighscore();
         vidas = 3;
         pontos = 0;
         newGame = true;
+    }
+
+    public void SaveHighscore()
+    {
+        if(pontos > highscore) highscore = pontos;
+        File.WriteAllText(Application.dataPath +"/highscore.txt",highscore.ToString());
+    }
+
+    public int LoadHighscore()
+    {
+        var highscoreString = File.ReadAllText(Application.dataPath +"/highscore.txt");
+        highscore = int.Parse(highscoreString);
+        return highscore;
+
     }
 
 

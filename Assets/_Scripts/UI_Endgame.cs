@@ -24,7 +24,7 @@ public class UI_Endgame : MonoBehaviour
             continueButton.SetActive(false);
         }
         score.text = $"SCORE: {gm.pontos}";
-        highscore.text = $"HIGHSCORE: {gm.highscore}";
+        highscore.text = $"HIGHSCORE: {gm.LoadHighscore()}";
     }
 
     public void Voltar()

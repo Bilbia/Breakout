@@ -13,6 +13,6 @@ public class UI_Highscore : MonoBehaviour
    
    void Update()
    {
-       textComp.text = $"Highscore: {gm.highscore}";
+       textComp.text = $"Highscore: {gm.LoadHighscore()}";
    }
 }
