@@ -43,6 +43,7 @@ public class GameManager
 
     public void Reset()
     {
+        if(pontos > highscore) highscore = pontos;
         vidas = 3;
         pontos = 0;
         newGame = true;

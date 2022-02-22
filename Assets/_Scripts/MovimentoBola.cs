@@ -65,6 +65,7 @@ public class MovimentoBola : MonoBehaviour
     {
         if(gm.vidas <= 0 && gm.gameState == GameManager.GameState.GAME)
         {
+            if(gm.pontos > gm.highscore) gm.highscore = gm.pontos;
             gm.ChangeState(GameManager.GameState.ENDGAME);
         }
         
