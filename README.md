@@ -6,7 +6,7 @@ In order to play, press Space to launch ball and use either the arrows or AD to 
 
 # Features
 
-Wait to launch ball: the ball will still with the paddle until you press Space. It will then be launched and the game will begin.
+Wait to launch ball: the ball will stay with the paddle until you press Space. It will then be launched and the game will begin.
 
 Highscore: the player's highscore will be saved and shown on the top of the screen and after every game.
 
