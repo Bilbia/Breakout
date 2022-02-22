@@ -8,11 +8,12 @@ public class UI_Start : MonoBehaviour
 
   private void OnEnable()
   {
-      gm = GameManager.GetInstance();
+    gm = GameManager.GetInstance();
   }
  
   public void Comecar()
   {
-      gm.ChangeState(GameManager.GameState.GAME);
+    gm.Reset();
+    gm.ChangeState(GameManager.GameState.GAME);
   }
 }

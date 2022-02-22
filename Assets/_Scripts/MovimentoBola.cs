@@ -28,6 +28,11 @@ public class MovimentoBola : MonoBehaviour
     {
         if(gm.gameState != GameManager.GameState.GAME) return;
 
+        if(gm.newGame){
+            launchBall = false;
+            gm.newGame = false;
+        }
+
         launchBall = WaitToLaunchBall(launchBall);
 
         if(launchBall)
@@ -89,17 +94,18 @@ public class MovimentoBola : MonoBehaviour
         if(!launchBall){
             Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             transform.position = playerPosition + new Vector3(0, 0.5f, 0);
+            if(Input.GetKeyDown(KeyCode.Space)){
+                launchBall = true;
+                audioSource.PlayOneShot(launchSoundClip);
+
+                float dirX = Random.Range(-5.0f, 5.0f);
+                float dirY = Random.Range(2.0f, 5.0f);
+
+                direcao = new Vector3(dirX, dirY).normalized;
+            }
         }
         
-        if(Input.GetKeyDown(KeyCode.Space)){
-            launchBall = true;
-            audioSource.PlayOneShot(launchSoundClip);
-
-            float dirX = Random.Range(-5.0f, 5.0f);
-            float dirY = Random.Range(2.0f, 5.0f);
-
-            direcao = new Vector3(dirX, dirY).normalized;
-        }
+        
 
         return launchBall;
     }

@@ -9,6 +9,8 @@ public class GameManager
     public GameState gameState {get; private set;}
     public int vidas;
     public int pontos;
+    public int highscore = 0;
+    public bool newGame = false;
 
     private static GameManager _instance;
 
@@ -34,15 +36,16 @@ public class GameManager
 
     public void ChangeState(GameState nextState)
     {
-        if(nextState == GameState.GAME) Reset();
+        // if(nextState == GameState.GAME) Reset();
         gameState = nextState;
         changeStateDelegate();  
     }
 
-    private void Reset()
+    public void Reset()
     {
         vidas = 3;
         pontos = 0;
+        newGame = true;
     }
 
 

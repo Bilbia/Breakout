@@ -20,7 +20,8 @@ public class Bloco : MonoBehaviour
 
     void Start()
     {
-        health = Random.Range(0, 4);
+        //health = Random.Range(0, 4);
+        health = 0;
         render = gameObject.GetComponent<SpriteRenderer>();
         if(health == 0) render.sprite = health0;
         if(health == 1) render.sprite = health1;
