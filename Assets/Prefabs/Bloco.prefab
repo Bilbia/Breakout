@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1893619725763939102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 7.7, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.19, y: 0.09}
   m_EdgeRadius: 0
 --- !u!114 &1376481598943822570
 MonoBehaviour:
@@ -122,3 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5bf2f9d39b23346b922f1510ec6328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health0: {fileID: 21300000, guid: 45875fcccf990924cb5eb8f4ce9eb560, type: 3}
+  health1: {fileID: 21300000, guid: eba7fbae02096584cae5b84b06bd3fa8, type: 3}
+  health2: {fileID: 21300000, guid: fefd2dde6da73af48bfa9665fa4a7e7a, type: 3}
+  health3: {fileID: 21300000, guid: 30f1aafbba281db48baf7f3adfce263b, type: 3}
+  health4: {fileID: 21300000, guid: d33ecbe2b0a36244889d3571f8661488, type: 3}
